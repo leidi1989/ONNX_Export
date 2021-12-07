@@ -4,7 +4,7 @@ Version:
 Author: Leidi
 Date: 2021-03-26 17:46:16
 LastEditors: Leidi
-LastEditTime: 2021-06-18 18:15:34
+LastEditTime: 2021-12-07 14:57:45
 '''
 import onnx
 import torch
@@ -40,7 +40,8 @@ torch_output_value = model(x).cpu().detach().numpy()
 torch.onnx.export(model,
                   x,
                   export_onnx_file,
-                  opset_version=10,
+                  opset_version=11,
+                  export_params=True,
                   do_constant_folding=True,  # 是否执行常量折叠优化
                   input_names=["input"],  # 输入名
                   output_names=["output"],  # 输出名
