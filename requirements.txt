@@ -10,3 +10,4 @@ onnx
 torch
 onnxruntime-gpu
 onnx-simplifier
+netron
